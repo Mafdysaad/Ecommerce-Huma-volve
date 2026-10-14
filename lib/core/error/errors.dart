@@ -43,6 +43,9 @@ class ServerFailure extends Failure {
 
       case DioExceptionType.unknown:
         return ServerFailure("Something went wrong");
+      case DioExceptionType.transformTimeout:
+        // TODO: Handle this case.
+        throw UnimplementedError();
     }
   }
 
