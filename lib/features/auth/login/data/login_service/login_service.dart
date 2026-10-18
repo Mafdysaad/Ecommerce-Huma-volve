@@ -1,7 +1,6 @@
-import 'package:dio/dio.dart';
 import 'package:ecommerce_app_huma_volve/core/api_clients/api_clients.dart';
 import 'package:ecommerce_app_huma_volve/core/const/api/endpoints.dart';
-import 'package:ecommerce_app_huma_volve/core/error/errors.dart';
+
 import 'package:ecommerce_app_huma_volve/features/auth/login/data/login_model.dart';
 
 class LoginService {

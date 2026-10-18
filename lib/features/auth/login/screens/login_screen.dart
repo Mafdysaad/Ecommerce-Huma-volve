@@ -2,6 +2,7 @@ import 'package:dio/dio.dart';
 import 'package:ecommerce_app_huma_volve/core/api_clients/api_clients.dart';
 import 'package:ecommerce_app_huma_volve/features/auth/login/data/login_model.dart';
 import 'package:ecommerce_app_huma_volve/features/auth/login/data/login_service/login_service.dart';
+import 'package:ecommerce_app_huma_volve/features/home/screens/home_screen.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../core/widgets/custom_text_field.dart';
@@ -55,17 +56,15 @@ class _LoginScreenState extends State<LoginScreen> {
                 const SizedBox(height: 32),
                 Text(
                   'Welcome Back!',
-                  style: Theme.of(
-                    context,
-                  ).textTheme.displayLarge?.copyWith(fontSize: 32),
+                  style: Theme.of(context).textTheme.displayLarge
+                      ?.copyWith(fontSize: 32),
                   textAlign: TextAlign.center,
                 ),
                 const SizedBox(height: 8),
                 Text(
                   'Login to continue your shopping',
-                  style: Theme.of(
-                    context,
-                  ).textTheme.bodyMedium?.copyWith(fontSize: 16),
+                  style: Theme.of(context).textTheme.bodyMedium
+                      ?.copyWith(fontSize: 16),
                   textAlign: TextAlign.center,
                 ),
                 const SizedBox(height: 64),
@@ -129,6 +128,12 @@ class _LoginScreenState extends State<LoginScreen> {
                         ).showSnackBar(SnackBar(content: Text(e.toString())));
                       }
                     }
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const HomeScreen(),
+                      ),
+                    );
                   },
                 ),
                 const SizedBox(height: 24),
@@ -141,9 +146,11 @@ class _LoginScreenState extends State<LoginScreen> {
                         Navigator.pushReplacement(
                           context,
                           PageRouteBuilder(
-                            pageBuilder:
-                                (context, animation, secondaryAnimation) =>
-                                    const SignUpScreen(),
+                            pageBuilder: (
+                              context,
+                              animation,
+                              secondaryAnimation,
+                            ) => const SignUpScreen(),
                             transitionsBuilder:
                                 (
                                   context,
